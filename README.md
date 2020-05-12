@@ -3,12 +3,12 @@
 
 ## Overview
 
-This is my second project of the software engineering immersive course at GA London. The assignment was to build a React application that consumes a public API. The project was to be completed in teams of 2 within 48 hours.
+This is my second project of the Software Engineering Immersive course at GA London. The assignment was to build a React application that consumes a public API. The project was to be completed in teams of 2 within 48 hours.
 
-Making use of the Space-X public API, we built a website that allows the user to see all the past launches that Space-X has done, as well as all the upcoming launches to be done. 
-As the API is being updated when a launch is done, the webpage will be automatically render the flights from upcoming and past flights.
+Making use of Space-X's public API, we built a website that allows the user to see all the past launches that Space-X has done, as well as all the upcoming launches that are planned. 
+As the API is being updated when a launch is done, the webpage will be automatically render the launches from upcoming and past launches.
 
-You can launch the site on GitHub pages [here](https://iamnini.github.io/project-2/) 
+You can see the website on GitHub pages [here](https://iamnini.github.io/project-2/) 
 
 ## The Brief 
 
@@ -31,9 +31,9 @@ You can launch the site on GitHub pages [here](https://iamnini.github.io/project
 
 ## The Approach 
 
-As a pair we were both interested in Space-X and their missions to Mars. So we decided to make a launch tracker what will show us the upcoming launches and the past launches in order to keep track of SpaceX's activities and plans. 
+As a pair we were both interested in Space-X and their missions to Mars. So we decided to make a launch tracker what will show the upcoming launches and the past launches in order to keep track of SpaceX's activities and plans. 
 
-We deceided to use a Open Source REST [API](https://docs.spacexdata.com/?version=latest#5fc4c846-c373-43df-a10a-e9faf80a8b0a) from Space-X that includes images and all the related information to the launches. So you could get a description of each particular mission.
+We decided to use a Open Source REST [API](https://docs.spacexdata.com/?version=latest#5fc4c846-c373-43df-a10a-e9faf80a8b0a) from Space-X that includes images and all the information related to the launches. So we could get a description of each particular mission.
 
 **The Routes with React Router**
 
