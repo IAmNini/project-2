@@ -41,14 +41,13 @@ So we decided to have 4 main components each one with their own Route.
 - `/` - as the Home page, so the landing page.
 - `/past` - as the past launches rendered.
 - `/upcoming` - as the upcoming launches to be done.
-- `/:flightNumber` - a dynamic route that will render an individual launche with its description  
+- `/:flightNumber` - a dynamic route that will render an individual launch with its description.
 
 ```js
 const App = () => (
   <BrowserRouter basename="/project-2">
     <NavBar />
     <Switch>
-      <Route exact path='/WeatherMars' component={WeatherMars}/>
       <Route exact path="/past" component={PastLaunches} />
       <Route exact path="/upcoming" component={UpcomingLaunches} />
       <Route exact path="/" component={Home} />
@@ -60,7 +59,7 @@ const App = () => (
 
 - **HOME**
 
-The landing page is no more than rendering two buttons that will take you rahter to the `/past` path or `/upcoming` path.
+The landing page is no more than rendering two buttons that will take you either to the `/past` path or `/upcoming` path.
 
 ```js
         <Link to={'/past'} style={{ fontFamily: 'Special Elite', color: 'black' }}><button>Click here to see past launches</button></Link>
@@ -71,9 +70,9 @@ The landing page is no more than rendering two buttons that will take you rahter
 
  ![](./src/images/home.png)
 
-- **Past Flights**
+- **Past Launches**
 
-By using axios what was previously installed and importing the method in order to use a get request into a `componentDidMount()` function we manage to get all the past flights.
+By using axios that was previously installed and importing the method in order to use a get request into a `componentDidMount()` function we manage to get all the past launches.
 
 The state will be updated as per this request.
 
@@ -93,7 +92,7 @@ class PastLaunches extends React.Component {
   }
 ```
 
-Rendering the information is done by mapping trough the given state after getting the information from the API, by mapping we have access to:
+Rendering the information is done by mapping trough the fetched information after getting it from the API, by mapping we have access to:
 - `e.flight_number` - Flight Number
 - `e.mission_name` - Mission Name
 - `e.launch_year` - Flight date
@@ -129,9 +128,9 @@ render() {
  ![](./src/images/past.png)
 
 
- - **Upcoming Flights**
+ - **Upcoming Launches**
 
-The upcoming flights were done in a similar manner than the past flights by using a axios method but this time the get request is done to a different api url with our `componentDidMount()` function.
+The upcoming launches were done in a similar manner as the past ones, by using an axios method but this time the get request is done to a different api url with our `componentDidMount()` function.
 
 ```js
  componentDidMount() {
@@ -140,12 +139,11 @@ The upcoming flights were done in a similar manner than the past flights by usin
   }
 ```
 
-Rendering and returning the elements were done in the same way as our past flights, with the only difference that most of the upcoming launches did not have a image patch to render, were we face the problem that our card were missing an image.
+Rendering and returning the elements was done in the same way as our past launches, with the only difference that most of the upcoming launches did not have an image patch to render, which is where we faced the problem that our cards were missing an image.
 
-The solution to it is adding an image ourselfs each time that the API does not contain one, so we decided to render a Space-X logo instead.
+The solution we found was adding an image ourselves each time that the API did not provide one, so we decided to render a Space-X logo instead.
 
 <img src= src/images/spacexlogo.png height=50 width=50 />
-
 
 ```js
   <img className="patch-picture upcoming-patch" src={!e.links.mission_patch_small ? '../images/spacexlogo.png' : e.links.mission_patch_small} />
@@ -154,18 +152,13 @@ The solution to it is adding an image ourselfs each time that the API does not c
 
 ![](./src/images/upcoming.png)
 
- - **Single Flights**
- In order to build an interactive single flight path so that we we click in a card this particular flight will be rendered we used the `flightNumber` as is a unique identifier for the flights 
+ - **Single Launch**
+
+ In order to build an interactive single launch path so that when we click in a card this particular information will be rendered we used the `flightNumber` as it is a unique identifier for each launch.
 
  ```js
 
      const flightNumber = this.props.match.params.flightNumber
-
- ```
-
- So we will be calling in our axios get request by this indentifier 
-
- ```js
 
    componentDidMount() {
     const flightNumber = this.props.match.params.flightNumber
@@ -174,7 +167,8 @@ The solution to it is adding an image ourselfs each time that the API does not c
   }
 
  ```
-This time the state will contain more than one property, this is due to the API structure as in order to get the additional information we had to map trough some arrays what where contained by objects. So a regular map would not work.
+
+This time the state will contain more than one property, this is due to the API structure as in order to get the additional information we had to map trough some arrays that where contained inside objects.
 
 
 ```js
@@ -195,7 +189,7 @@ This time the state will contain more than one property, this is due to the API 
   }
 ```
 
-Aditional 3 pictures were added in the single card. The rocket pictures, they were not included in the API so as a different mission will have a different rocket, we manage to match the `rocket_name` from the API with our stored pictures.
+We decided to add pictures of the rockets used in the single card. The rocket pictures, since they were not included in the API, as a different mission had a different rocket, we matched the `rocket_name` from the API with our stored pictures.
 
 
 ```js
@@ -207,15 +201,12 @@ Aditional 3 pictures were added in the single card. The rocket pictures, they we
 ![](./src/images/single.png)
 
 
-## Potential future features
+## Potential Future Features
 
-- A search field is a potential future for this project as we might want to see stright away one particular flight information.
-- Instead of using a inframe tag for the wether on Mars what is making it look much more advanced will be suitable to use the NASA API with the same information in order to customize it as prefered.
-
-
+- A search field is a potential future feature for this project as we might want to search for one particular launch information.
 
 ## Challenges 
 
-- Depending on the structure of the API, it can be quite tedious to get all the information that you want. So understading the API at first place was a challenge as we were not rendering what we wanted from the really begining, a lesson learned from this project will be definetly reasearch the API we want to use first.
+- Depending on the structure of the API, it can be quite tedious to get all the information that you want. So understading the API in the first place was a challenge as we were not rendering what we wanted from the really beginning. A lesson learned from this project will be to reasearch the API we want to use first.
 
-- Deploying React Router on GitHub pages was also quite difficult, as many adjustments were needed to move from the dev-server. For instance, some images are  visible in the localhost but not yet into the live page what is a bug to be fixed from the deployment perspective.
+- Deploying React Router on GitHub pages was also quite difficult, as many adjustments were needed to move from the dev-server. For instance, some images are visible in the localhost but not yet into the live page. This is an issue we are working on fixing.
