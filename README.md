@@ -199,16 +199,20 @@ We decided to add pictures of the rockets used in the single card. The rocket pi
 
 ```
 
-
 ![](./src/images/single.png)
-
-
-## Potential Future Features
-
-- A search field is a potential future feature for this project as we might want to search for one particular launch information.
 
 ## Challenges 
 
 - Depending on the structure of the API, it can be quite tedious to get all the information that you want. So understading the API in the first place was a challenge as we were not rendering what we wanted from the really beginning. A lesson learned from this project will be to reasearch the API we want to use first.
 
 - Deploying React Router on GitHub pages was also quite difficult, as many adjustments were needed to move from the dev-server. For instance, some images are visible in the localhost but not yet into the live page. This is an issue we are working on fixing.
+
+## Successes
+
+- Learning to use React was not our initial favorite thing but we were happy that we managed to see its benefits and are definitely more comfortable with it now.
+
+- It was also our first time working in a team (pair). It was good to learn to respect each other's opinion and put our ideas together to create a project together.
+
+## Potential Future Features
+
+- A search field is a potential future feature for this project as we might want to search for one particular launch information.
