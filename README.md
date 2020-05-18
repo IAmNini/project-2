@@ -8,6 +8,8 @@ This is my second project of the Software Engineering Immersive course at GA Lon
 Making use of Space-X's public API, we built a website that allows the user to see all the past launches that Space-X has done, as well as all the upcoming launches that are planned. 
 As the API is being updated when a launch is done, the webpage will be automatically render the launches from upcoming and past launches.
 
+<img src="src/images/Screen Shot 2020-05-13 at 10.40.47.png">
+
 You can see the website on GitHub pages [here](https://iamnini.github.io/project-2/) 
 
 ## The Brief 
