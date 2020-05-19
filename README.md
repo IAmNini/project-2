@@ -14,7 +14,7 @@ You can see the website on GitHub pages [here](https://iamnini.github.io/project
 
 ## The Brief 
 
-- **Consume a public API**  – this could be anything but it must make sense for your project.
+- **Consume a public API**  – this could be anything but it must make sense for the project.
 - **Have several components** - At least one classical and one functional.
 - **The app should include a router**  - with several "pages".
 - **Be deployed online and accessible to the public.** 
@@ -33,13 +33,13 @@ You can see the website on GitHub pages [here](https://iamnini.github.io/project
 
 ## The Approach 
 
-As a pair we were both interested in Space-X and their missions to Mars. So we decided to make a launch tracker what will show the upcoming launches and the past launches in order to keep track of SpaceX's activities and plans. 
+As a pair we were both interested in Space-X and their missions to Mars. So, we decided to make a launch tracker that will show the upcoming launches and the past launches in order to keep track of SpaceX's activities and plans. 
 
-We decided to use a Open Source REST [API](https://docs.spacexdata.com/?version=latest#5fc4c846-c373-43df-a10a-e9faf80a8b0a) from Space-X that includes images and all the information related to the launches. So we could get a description of each particular mission.
+We decided to use an Open Source REST [API](https://docs.spacexdata.com/?version=latest#5fc4c846-c373-43df-a10a-e9faf80a8b0a) from Space-X that includes images and all the information related to the launches. This way, we could get a description of each particular mission.
 
 **The Routes with React Router**
 
-So we decided to have 4 main components each one with their own Route.
+We decided to have 4 main components each one with their own Route.
 - `/` - as the Home page, so the landing page.
 - `/past` - as the past launches rendered.
 - `/upcoming` - as the upcoming launches to be done.
@@ -70,8 +70,6 @@ The landing page is no more than rendering two buttons that will take you either
 
 ```
 
- ![](./src/images/home.png)
-
 - **Past Launches**
 
 By using axios that was previously installed and importing the method in order to use a get request into a `componentDidMount()` function we manage to get all the past launches.
@@ -100,7 +98,7 @@ Rendering the information is done by mapping trough the fetched information afte
 - `e.launch_year` - Flight date
 - `e.links.mission_patch_small` - The patch image for each flight 
 
-All this obtained information is returned in the form of a card, so users are able to go trough all the missions by scrolling left and right.
+All this obtained information is returned in the form of a card, so users are able to go through all the missions by scrolling left and right.
 
 ```js
 render() {
@@ -127,12 +125,9 @@ render() {
 }
 ```
 
- ![](./src/images/past.png)
-
-
  - **Upcoming Launches**
 
-The upcoming launches were done in a similar manner as the past ones, by using an axios method but this time the get request is done to a different api url with our `componentDidMount()` function.
+The upcoming launches were done in a similar manner as the past ones, by using an axios method but this time the get request is done to a different API url with our `componentDidMount()` function.
 
 ```js
  componentDidMount() {
@@ -152,11 +147,9 @@ The solution we found was adding an image ourselves each time that the API did n
 
 ```
 
-![](./src/images/upcoming.png)
-
  - **Single Launch**
 
- In order to build an interactive single launch path so that when we click in a card this particular information will be rendered we used the `flightNumber` as it is a unique identifier for each launch.
+ In order to build an interactive single launch path so that when we click in a card this particular information is rendered, we used the `flightNumber` as it is a unique identifier for each launch.
 
  ```js
 
@@ -170,7 +163,7 @@ The solution we found was adding an image ourselves each time that the API did n
 
  ```
 
-This time the state will contain more than one property, this is due to the API structure as in order to get the additional information we had to map trough some arrays that where contained inside objects.
+This time, the state will contain more than one property; this is due to the API structure, as in order to get the additional information, we had to map through some arrays that were contained inside objects.
 
 
 ```js
@@ -191,28 +184,25 @@ This time the state will contain more than one property, this is due to the API 
   }
 ```
 
-We decided to add pictures of the rockets used in the single card. The rocket pictures, since they were not included in the API, as a different mission had a different rocket, we matched the `rocket_name` from the API with our stored pictures.
-
+We decided to display for each single launch pictures of the rocket that was used. The rocket pictures were not included in the API, so we matched the `rocket_name` information from the API with images for each rocket that we uploaded separately.
 
 ```js
             <img className="rocket-picture" src={rocket.rocket_name === 'Falcon 1' ? '../images/falcon1.png' : rocket.rocket_name === 'Falcon 9' ? '../images/falcon9.png' : rocket.rocket_name === 'Falcon Heavy' ? '../images/falconheavy.png' : links.mission_patch_small} />
 
 ```
 
-![](./src/images/single.png)
-
 ## Challenges 
 
-- Depending on the structure of the API, it can be quite tedious to get all the information that you want. So understading the API in the first place was a challenge as we were not rendering what we wanted from the really beginning. A lesson learned from this project will be to reasearch the API we want to use first.
+- Depending on the structure of the API, it can be quite tedious to get all the information that you want. So, understading the API in the first place was a challenge as we were not rendering what we wanted from the very beginning. A lesson learned from this project will be to reasearch the API we want to use first.
 
 - Deploying React Router on GitHub pages was also quite difficult, as many adjustments were needed to move from the dev-server. For instance, some images are visible in the localhost but not yet into the live page. This is an issue we are working on fixing.
 
 ## Successes
 
-- Learning to use React was not our initial favorite thing but we were happy that we managed to see its benefits and are definitely more comfortable with it now.
+- Learning to use React was not our initial favorite thing, but we were happy that we managed to see its benefits and are definitely more comfortable with it now.
 
 - It was also our first time working in a team (pair). It was good to learn to respect each other's opinion and put our ideas together to create a project together.
 
 ## Potential Future Features
 
-- A search field is a potential future feature for this project as we might want to search for one particular launch information.
+- A search field is a potential future feature for this project, as we might want to search for one particular launch information.
