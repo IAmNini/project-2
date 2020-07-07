@@ -12,7 +12,7 @@ import SingleLaunch from './components/SingleLaunch'
 import NavBar from './components/NavBar'
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/project-2">
     <NavBar />
     <Switch>
       <Route exact path="/past" component={PastLaunches} />
