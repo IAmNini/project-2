@@ -23,7 +23,7 @@ class UpcomingLaunches extends React.Component {
         <Link to={`/${e.flight_number}`}>
           <h2>Mission name: {e.mission_name}</h2>
           <h2>Launch year: {e.launch_year}</h2>
-          <img className="patch-picture upcoming-patch" src={!e.links.mission_patch_small ? 'https://imgur.com/k6mE7pP' : e.links.mission_patch_small} />
+          <img className="patch-picture upcoming-patch" src={!e.links.mission_patch_small ? 'https://imgur.com/k6mE7pP.png' : e.links.mission_patch_small} />
         </Link>
       </div>
     ))
