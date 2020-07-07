@@ -15,10 +15,10 @@ const App = () => (
   <BrowserRouter basename="/project-2">
     <NavBar />
     <Switch>
-      <Route exact path="/" component={Home} />
       <Route exact path="/past" component={PastLaunches} />
       <Route exact path="/upcoming" component={UpcomingLaunches} />
       <Route path="/:flightNumber" component={SingleLaunch} />
+      <Route exact path="/" component={Home} />
     </Switch>
   </BrowserRouter>
 )

@@ -17,7 +17,7 @@ const NavBar = () => {
           </div>
           <div className="navbar-item">
             <a href={'https://www.spacex.com/mars'}>
-              <img src={'../images/spacexlogo.png'} />
+              <img src={'https://imgur.com/k6mE7pP'} />
             </a>
           </div>
         </div>

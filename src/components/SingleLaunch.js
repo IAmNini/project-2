@@ -56,11 +56,11 @@ class SingleLaunch extends React.Component {
               return element.orbit_params.regime
             })}</div>
             <h2>Launch site: {launch_site.site_name_long}</h2>
-            <img className="single-patch-picture" src={!links.mission_patch_small ? '../images/spacexlogo.png' : links.mission_patch_small} />
+            <img className="single-patch-picture" src={!links.mission_patch_small ? 'https://imgur.com/k6mE7pP' : links.mission_patch_small} />
             <div>{details}</div>
           </div>
           <div className="rocket-picture-container">
-            <img className="rocket-picture" src={rocket.rocket_name === 'Falcon 1' ? '../images/falcon1.png' : rocket.rocket_name === 'Falcon 9' ? '../images/falcon9.png' : rocket.rocket_name === 'Falcon Heavy' ? '../images/falconheavy.png' : links.mission_patch_small} />
+            <img className="rocket-picture" src={rocket.rocket_name === 'Falcon 1' ? 'https://imgur.com/s4lCebI' : rocket.rocket_name === 'Falcon 9' ? 'https://imgur.com/ljg2XdF' : rocket.rocket_name === 'Falcon Heavy' ? 'https://imgur.com/1A8czD8' : links.mission_patch_small} />
           </div>
         </div>
       </div>
